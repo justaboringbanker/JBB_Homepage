@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just a Boring Banker</title>
+    <style>
+        /* General Setup */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Top Banner Container */
+        .header-container {
+            width: 100%;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 10;
+            border-bottom: 2px solid #ddd;
+        }
+
+        /* The Banner Image */
+        .banner-img {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            margin: 0;
+        }
+
+        /* Main Content Container */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 40px auto;
+            flex-grow: 1;
+        }
+
+        /* The Headshot Container */
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+        }
+
+        p.bio {
+            font-size: 1.1rem;
+            max-width: 600px;
+            line-height: 1.6;
+            margin: 0 20px 30px 20px;
+            color: #555;
+        }
+
+        /* Call to Action Buttons */
+        .button-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #007bff;
+            border: 2px solid #007bff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e6f2ff;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-container">
+        <img src="banner.png" alt="Just a Boring Banker Banner" class="banner-img">
+    </header>
+
+    <div class="main-content">
+        <img src="headshot_for_website.png" alt="Just a Boring Banker" class="profile-pic">
+
+        <h1>Just a Boring Banker</h1>
+
+        <p class="bio">
+            Master the financial basics that high school skipped. Welcome to Just a Boring Banker, your guide to cash flow management, debt repayment strategies, investing for beginners, the Wealth Building Blocks and taxes in plain language, simplifying personal finance - no hype, no get-rich-quick nonsense.
+        </p>
+
+        <p class="bio">
+            The basics we all should have learned in school. I break through all the jargon and present information in a manner that is easy to understand, simplifying personal finance. Below, you will find tools I developed to help you understand how it feels when investing; the emotional side that dictates your experience, and ultimately, your returns.
+        </p>
+        
+        <div class="button-container">
+            <a href="https://jbb-tools.onrender.com" target="_blank" class="btn btn-primary">Launch The Tools</a>
+            
+            <a href="https://youtube.com/@JustABoringBanker" target="_blank" class="btn btn-secondary">Watch on YouTube</a>
+        </div>
+    </div>
+
+</body>
+</html>
