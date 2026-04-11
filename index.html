@@ -31,7 +31,6 @@
             border-bottom: 2px solid #eee;
         }
 
-        /* The Banner Image */
         .banner-img {
             width: 100%;
             max-width: 1200px;
@@ -51,7 +50,6 @@
             flex-grow: 1;
         }
 
-        /* The Headshot Container */
         .profile-pic {
             width: 200px;
             height: 200px;
@@ -60,7 +58,6 @@
             margin-bottom: 20px;
         }
 
-        /* Typography */
         h1 {
             font-size: 2.5rem;
             margin: 0 0 10px 0;
@@ -75,12 +72,12 @@
             color: #555;
         }
 
-        /* Call to Action Buttons - Updated for Stacking */
+        /* --- THE BUTTON STACKING LOGIC --- */
         .button-stack {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 20px; /* Space between the row of buttons and the YouTube link */
             margin-bottom: 50px;
             width: 100%;
         }
@@ -89,7 +86,7 @@
             display: flex;
             gap: 15px;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* This allows your 4 buttons to wrap properly later */
         }
 
         .btn {
@@ -101,7 +98,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Green Primary Buttons */
         .btn-primary {
             background-color: #00ca00;
             color: white;
@@ -113,7 +109,6 @@
             border-color: #009900;
         }
 
-        /* Transparent Text Link for YouTube */
         .btn-secondary {
             background-color: transparent;
             color: #00ca00;
@@ -125,64 +120,7 @@
         }
     </style>
 </head>
-<<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Button Stacking</title>
-<style>
-  /* Main wrapper that stacks the rows and centers them */
-  .button-wrapper {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;    /* Centers everything horizontally */
-    gap: 20px;              /* Space between the top row and the YouTube link */
-    margin-top: 30px;       /* Adds some breathing room above the buttons */
-  }
-
-  /* Container for the green buttons */
-  .tool-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;        /* Ensures buttons wrap to a new line on small screens */
-    gap: 15px;              /* Space between the buttons side-by-side */
-  }
-
-  /* Basic styling matching your image */
-  .btn-solid {
-    background-color: #00c800; /* This is the green background */
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-  }
-
-  /* Styling for the YouTube text link */
-  .btn-text {
-    color: #00c800; /* This is the green text */
-    text-decoration: none;
-    font-weight: bold;
-    padding: 12px 24px;
-  }
-</style>
-</head>
 <body>
-
-  <div class="button-wrapper">
-    
-    <div class="tool-buttons">
-      <a href="#" class="btn-solid">The Hindsight Machine</a>
-      <a href="#" class="btn-solid">Allocation in Action</a>
-      </div>
-
-    <a href="#" class="btn-text">Watch on YouTube</a>
-    
-  </div>
-
-</body>
-</html>body>
 
     <header class="header-container">
         <img src="banner.png" alt="Just a Boring Banker Banner" class="banner-img">
