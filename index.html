@@ -8,7 +8,7 @@
         /* General Setup */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
+            background-color: #ffffff;
             color: #333;
             text-align: center;
             margin: 0;
@@ -22,13 +22,13 @@
         /* Top Banner Container */
         .header-container {
             width: 100%;
-            background-color: #f4f7f6;
+            background-color: #ffffff;
             display: flex;
             justify-content: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             position: relative;
             z-index: 10;
-            border-bottom: 2px solid #ddd;
+            border-bottom: 2px solid #eee;
         }
 
         /* The Banner Image */
@@ -75,13 +75,21 @@
             color: #555;
         }
 
-        /* Call to Action Buttons */
-        .button-container {
+        /* Call to Action Buttons - Updated for Stacking */
+        .button-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        .tools-row {
             display: flex;
             gap: 15px;
-            flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 50px;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -90,28 +98,30 @@
             border-radius: 5px;
             font-weight: bold;
             font-size: 1rem;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
+        /* Green Primary Buttons */
         .btn-primary {
-            background-color: #007bff;
+            background-color: #00ca00;
             color: white;
-            border: 2px solid #007bff;
+            border: 2px solid #00ca00;
         }
 
         .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
+            background-color: #009900;
+            border-color: #009900;
         }
 
+        /* Transparent Text Link for YouTube */
         .btn-secondary {
             background-color: transparent;
-            color: #007bff;
-            border: 2px solid #007bff;
+            color: #00ca00;
+            border: none;
         }
 
         .btn-secondary:hover {
-            background-color: #e6f2ff;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -134,8 +144,11 @@
             The basics we all should have learned in school. I break through all the jargon and present information in a manner that is easy to understand, simplifying personal finance. Below, you will find tools I developed to help you understand how it feels when investing; the emotional side that dictates your experience, and ultimately, your returns.
         </p>
         
-        <div class="button-container">
-            <a href="https://jbb-tools.onrender.com" target="_blank" class="btn btn-primary">Launch The Tools</a>
+        <div class="button-stack">
+            <div class="tools-row">
+                <a href="tools/html_machines/The_Hindsight_Machine.html" class="btn btn-primary">The Hindsight Machine</a>
+                <a href="tools/html_machines/Allocation_in_Action.html" class="btn btn-primary">Allocation in Action</a>
+            </div>
             
             <a href="https://youtube.com/@JustABoringBanker" target="_blank" class="btn btn-secondary">Watch on YouTube</a>
         </div>
