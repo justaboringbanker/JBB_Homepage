@@ -125,7 +125,64 @@
         }
     </style>
 </head>
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Stacking</title>
+<style>
+  /* Main wrapper that stacks the rows and centers them */
+  .button-wrapper {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    /* Centers everything horizontally */
+    gap: 20px;              /* Space between the top row and the YouTube link */
+    margin-top: 30px;       /* Adds some breathing room above the buttons */
+  }
+
+  /* Container for the green buttons */
+  .tool-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;        /* Ensures buttons wrap to a new line on small screens */
+    gap: 15px;              /* Space between the buttons side-by-side */
+  }
+
+  /* Basic styling matching your image */
+  .btn-solid {
+    background-color: #00c800; /* This is the green background */
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  /* Styling for the YouTube text link */
+  .btn-text {
+    color: #00c800; /* This is the green text */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 24px;
+  }
+</style>
+</head>
 <body>
+
+  <div class="button-wrapper">
+    
+    <div class="tool-buttons">
+      <a href="#" class="btn-solid">The Hindsight Machine</a>
+      <a href="#" class="btn-solid">Allocation in Action</a>
+      </div>
+
+    <a href="#" class="btn-text">Watch on YouTube</a>
+    
+  </div>
+
+</body>
+</html>body>
 
     <header class="header-container">
         <img src="banner.png" alt="Just a Boring Banker Banner" class="banner-img">
