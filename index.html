@@ -21,7 +21,7 @@
 
         /* Top Banner Container */
         .header-container {
-            width: 100%;
+            width: 50%;
             background-color: #ffffff;
             display: flex;
             justify-content: center;
@@ -32,9 +32,10 @@
         }
 
         .banner-img {
-    width: 100%;       /* Keeps it full width */
-    max-height: 200px; /* Adjust this number until the button peeks up */
-    object-fit: cover; /* Prevents the image from looking "squashed" */
+    width: 100%;       /* Keeps it responsive across the screen */
+    height: 150px;     /* This is the key: it forces the banner to be shorter */
+    object-fit: cover; /* This prevents the image from looking "squashed" */
+    object-position: center; /* Keeps the logo centered within that shorter height */
 }
 
         /* Main Content Container */
