@@ -4,253 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just a Boring Banker</title>
-    <style>
-        /* --- CSS VARIABLES & THEME --- */
-        :root {
-            --brand-green: #006837;
-            --brand-blue: #262262;
-            --brand-blue-light: #4b45a0; /* For metallic sheen */
-            --text-dark: #31333F;
-            --text-muted: #4a5568;
-            --bg-light: #f8f9fa;
-        }
-
-        /* --- RESET & TYPOGRAPHY --- */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* --- TOP NAVIGATION --- */
-        .top-nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #eaeaea;
-        }
-
-        .top-nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .top-nav a:hover {
-            color: var(--brand-green);
-        }
-
-        /* --- HERO BANNER --- */
-        .hero-section {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            /* Placeholder for the background chart graphic */
-            background-image: url('assets/images/background-chart.png');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .banner-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            /* Foundational 3D shadow for banner */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
-        }
-
-        /* --- OVERLAPPING PROFILES ARCHITECTURE --- */
-        .profile-section {
-            display: flex;
-            justify-content: center;
-            margin-top: -40px; /* Pulls profiles up into the banner area */
-            position: relative;
-            z-index: 10;
-            height: 200px; /* Fixed height to reserve space for absolute children */
-        }
-
-        .profile-wrapper {
-            position: relative;
-            width: 400px;
-        }
-
-        .profile-ring {
-            border-radius: 50%;
-            /* Blue Metallic Gradient Ring Effect */
-            padding: 6px; 
-            background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-light) 50%, var(--brand-blue) 100%);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
-            background-clip: padding-box;
-            object-fit: cover;
-            position: absolute;
-        }
-
-        .profile-photo {
-            width: 180px;
-            height: 180px;
-            left: 20px;
-            top: 20px;
-            z-index: 1; /* Sits behind Alex */
-        }
-
-        .profile-avatar {
-            width: 220px;
-            height: 220px;
-            right: 0px;
-            top: 0px;
-            z-index: 2; /* Sits in front */
-            background-color: var(--brand-green); /* Optional: Background fill if SVG has transparent gaps */
-        }
-
-        /* --- MAIN CONTENT GRID (60/40 Split) --- */
-        .main-container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 6fr 4fr;
-            gap: 50px;
-            align-items: start;
-        }
-
-        .text-content h1 {
-            color: var(--brand-blue);
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .text-content p {
-            font-size: 1.15rem;
-            margin-bottom: 25px;
-            color: var(--text-muted);
-        }
-
-        .keyword {
-            color: var(--brand-green);
-            font-weight: 700;
-        }
-
-        /* --- WHY BORING IS YOUR EDGE (Nested Grid) --- */
-        .icon-grid-section {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .icon-grid-section h2 {
-            color: var(--brand-green);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .icon-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .icon-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--brand-blue);
-        }
-
-        .icon-item img {
-            width: 30px;
-            height: 30px;
-        }
-
-        /* --- BOTTOM NAVIGATION CTAs --- */
-        .cta-section {
-            max-width: 1200px;
-            margin: 40px auto 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            padding: 0 20px;
-        }
-
-        .calculators-row {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            width: 100%;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
-            /* Placeholder for Phase 3 3D CSS styling */
-            background-color: var(--brand-green);
-            color: white;
-            border: 2px solid transparent;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(0, 104, 55, 0.3);
-        }
-
-        .btn-youtube {
-            background-color: transparent;
-            color: var(--brand-green);
-            border-color: var(--brand-green);
-        }
-
-        /* --- RESPONSIVE BREAKPOINTS --- */
-        @media (max-width: 992px) {
-            .main-container {
-                grid-template-columns: 1fr; /* Stack columns on tablet/mobile */
-            }
-            .profile-wrapper {
-                transform: scale(0.8); /* Scale down overlapping profiles */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .top-nav {
-                flex-wrap: wrap;
-            }
-            .top-nav a {
-                margin: 5px 10px;
-                font-size: 0.9rem;
-            }
-            .calculators-row {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn {
-                width: 100%;
-                max-width: 350px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
 
@@ -264,47 +18,91 @@
 
     <section class="hero-section">
         <div class="banner-container">
-            <img src="banner.png?v=2" alt="Just a Boring Banker Banner">
+            <img src="assets/images/banner.png?v=4" alt="Just a Boring Banker Banner">
         </div>
     </section>
 
     <section class="profile-section">
         <div class="profile-wrapper">
-            <img src="headshot_for_website.png" alt="JBB Photo" class="profile-photo profile-ring">
-            <img src="assets/images/alex.svg" alt="Alex Avatar" class="profile-avatar profile-ring">
+            <img src="assets/images/headshot_for_website.png" alt="JBB Photo" class="profile-photo profile-ring">
+            <img src="assets/icons/alex.svg" alt="Alex Avatar" class="profile-avatar profile-ring">
         </div>
     </section>
 
     <main class="main-container">
         <article class="text-content">
             <h1>Just a Boring Banker</h1>
-            <p>Master the financial basics that high school skipped. Welcome to Just a Boring Banker, your guide to <span class="keyword">cash flow management</span>, <span class="keyword">debt repayment strategies</span>, <span class="keyword">investing for beginners</span>, the <span class="keyword">Wealth Building Blocks</span> and taxes in plain language, simplifying personal finance - no hype, no get-rich-quick nonsense.</p>
-            <p>The basics we all should have learned in school. I break through all the jargon and present information in a manner that is easy to understand, simplifying personal finance. Below, you will find tools I developed to help you understand how it feels when investing; the emotional side that dictates your experience, and ultimately, your returns.</p>
+            <div class="subtitle">Financial clarity for the rest of us.</div>
+            
+            <h2 class="headline">Stop Guessing. Start Growing.</h2>
+            <p>Most of us left high school without a clue how money actually works. <strong>Just a Boring Banker</strong> is here to fix that. No hype, no "moon shots," and zero get-rich-quick nonsense.</p>
+            <p>I strip away the jargon to focus on the levers that actually move the needle: <span class="keyword">smart cash flow management</span>, <span class="keyword">aggressive debt elimination</span>, and <span class="keyword">foundational investing</span>. We’re building wealth the "boring" way—because in finance, boring is where the results live.</p>
         </article>
 
         <aside class="icon-grid-section">
             <h2>WHY 'BORING' IS YOUR EDGE</h2>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">The basics we all should have learned in school. I break through the jargon and present information in a manner that is easy to understand, simplifying personal finance. Below, you will understand how it beats get-rich-quick nonsense.</p>
+            <p class="sidebar-intro">Excitement in finance is usually expensive. I break through the noise to deliver the straightforward strategies you should have been taught a decade ago.</p>
+            
+            <ul class="sidebar-bullets">
+                <li><strong>Jargon-Free Zone:</strong> Complex concepts explained in plain English.</li>
+                <li><strong>Actionable Strategy:</strong> Practical steps, not just theory.</li>
+                <li><strong>Sustainable Wealth:</strong> Building a future that doesn't rely on luck.</li>
+                <li><strong>Total Transparency:</strong> Honest guidance with no hidden agendas.</li>
+            </ul>
+
             <div class="icon-grid">
-                <div class="icon-item"><img src="assets/icons/jargon.svg" alt="Icon"> Break through jargon</div>
-                <div class="icon-item"><img src="assets/icons/understand.svg" alt="Icon"> Easy to understand</div>
-                <div class="icon-item"><img src="assets/icons/debt.svg" alt="Icon"> Debt repayment strategies</div>
-                <div class="icon-item"><img src="assets/icons/finance.svg" alt="Icon"> Simplified personal finance</div>
-                <div class="icon-item"><img src="assets/icons/blocks.svg" alt="Icon"> Wealth Building Blocks</div>
-                <div class="icon-item"><img src="assets/icons/emotional.svg" alt="Icon"> Emotional side</div>
+                <div class="icon-item">
+                    <img src="assets/icons/jargon.svg" alt="Icon"> 
+                    <div><strong>Break Through Jargon:</strong> Simplifying the complex.</div>
+                </div>
+                <div class="icon-item">
+                    <img src="assets/icons/finance.svg" alt="Icon"> 
+                    <div><strong>Cash Flow Control:</strong> Master where your money goes.</div>
+                </div>
+                <div class="icon-item">
+                    <img src="assets/icons/debt.svg" alt="Icon"> 
+                    <div><strong>Debt Mastery:</strong> Proven strategies to get—and stay—free.</div>
+                </div>
+                <div class="icon-item">
+                    <img src="assets/icons/blocks.svg" alt="Icon"> 
+                    <div><strong>Wealth Blocks:</strong> The fundamentals of long-term growth.</div>
+                </div>
+                <div class="icon-item">
+                    <img src="assets/icons/understand.svg" alt="Icon"> 
+                    <div><strong>Plain Language Taxes:</strong> Keeping more of what you earn.</div>
+                </div>
+                <div class="icon-item">
+                    <img src="assets/icons/emotional.svg" alt="Icon"> 
+                    <div><strong>Emotional Logic:</strong> Managing the psychology of spending.</div>
+                </div>
             </div>
         </aside>
     </main>
 
     <section class="cta-section">
         <div class="calculators-row">
-            <a href="https://jbb-website.onrender.com/tools/html_machines/The_Hindsight_Machine.html" target="_blank" class="btn">The Hindsight Machine</a>
-            <a href="https://jbb-website.onrender.com/tools/html_machines/Allocation_in_Action.html" target="_blank" class="btn">Allocation in Action</a>
-            <a href="https://jbb-website.onrender.com/tools/html_machines/Withdrawal_Scenarios.html" target="_blank" class="btn">Withdrawal Scenarios</a>
-            <a href="https://jbb-website.onrender.com/tools/html_machines/action_versus_consequences.html" target="_blank" class="btn">Actions Versus Consequences</a>
+            <a href="https://jbb-website.onrender.com/tools/html_machines/The_Hindsight_Machine.html" target="_blank" class="btn">
+                The Hindsight Machine
+                <small>Visualize your "What Ifs."</small>
+            </a>
+            <a href="https://jbb-website.onrender.com/tools/html_machines/Allocation_in_Action.html" target="_blank" class="btn">
+                Allocation in Action
+                <small>See the math behind the money.</small>
+            </a>
+            <a href="https://jbb-website.onrender.com/tools/html_machines/Withdrawal_Scenarios.html" target="_blank" class="btn">
+                Withdrawal Scenarios
+                <small>Plan your distribution strategy.</small>
+            </a>
+            <a href="https://jbb-website.onrender.com/tools/html_machines/action_versus_consequences.html" target="_blank" class="btn">
+                Actions Versus Consequences
+                <small>Analyze financial impacts.</small>
+            </a>
         </div>
         <div class="youtube-row">
-            <a href="https://www.youtube.com/@justaboringbanker" target="_blank" class="btn btn-youtube">Watch on YouTube</a>
+            <a href="https://www.youtube.com/@justaboringbanker" target="_blank" class="btn btn-youtube">
+                Watch on YouTube
+                <small>Join the "Boring" movement.</small>
+            </a>
         </div>
     </section>
 
