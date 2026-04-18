@@ -77,13 +77,40 @@ body {
 }
 
 /* =========================================
-   Hero Banner (3D Aesthetic)
+   Hero Banner (Using Your Explicit PNG)
    ========================================= */
 .hero-banner-container {
     display: flex;
     justify-content: center;
     width: 100%;
     padding: 1rem 0 2rem;
+}
+
+.hero-banner-wrapper {
+    position: relative;
+    width: 75%;
+    display: block;
+}
+
+.actual-banner-file {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Optional: Adding a shadow just to lift your image off the page */
+    box-shadow: var(--shadow-heavy);
+    border-radius: 16px;
+}
+
+.banner-mascot {
+    position: absolute !important;
+    right: 5% !important;
+    bottom: -5px !important;
+    width: auto !important;
+    /* Scales Alex relative to however tall your banner image renders */
+    height: 120% !important; 
+    min-height: 150px !important;
+    object-fit: contain !important;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4));
 }
 
 /* =========================================
