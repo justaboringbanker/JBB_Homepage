@@ -87,8 +87,10 @@ body {
 
 .hero-banner-wrapper {
     position: relative;
-    width: 75%;
+    width: 95%; /* Gives a tiny bit of breathing room on mobile */
+    max-width: 1200px; /* Locks it to the exact same size as your content grid */
     display: block;
+    margin: 0 auto; /* Centers the banner perfectly */
 }
 
 .actual-banner-file {
