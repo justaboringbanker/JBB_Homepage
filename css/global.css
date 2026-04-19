@@ -8,7 +8,11 @@
     --jbb-green-highlight: #008f4c;
     --jbb-blue: #262262;
     --jbb-gold: #d4af37;
-    --jbb-bg: #f8f9fa;
+    
+    /* NEW: Color variables updated for the framing effect */
+    --jbb-bg: #F4F1EA; 
+    --jbb-bg-outer: #DDD9D0; 
+    
     --text-main: #333333;
     --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-heavy: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -22,9 +26,18 @@
 }
 
 body {
-    background-color: var(--jbb-bg);
+    background-color: var(--jbb-bg-outer); /* Makes outside margins darker */
     color: var(--text-main);
     overflow-x: hidden;
+}
+
+/* NEW: The wrapper class to hold the center content */
+.page-wrapper {
+    background-color: var(--jbb-bg);
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    box-shadow: var(--shadow-soft);
 }
 
 /* =========================================
@@ -87,10 +100,10 @@ body {
 
 .hero-banner-wrapper {
     position: relative;
-    width: 95%; /* Gives a tiny bit of breathing room on mobile */
-    max-width: 1200px; /* Locks it to the exact same size as your content grid */
+    width: 95%; 
+    max-width: 1200px; 
     display: block;
-    margin: 0 auto; /* Centers the banner perfectly */
+    margin: 0 auto; 
 }
 
 .actual-banner-file {
@@ -111,7 +124,12 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
-    background: transparent; 
+    
+    /* NEW: Inserts the custom SVG graphic perfectly behind the circles */
+    background-image: url('../assets/tools/images/homepage_strip.svg'); 
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .profile-container {
@@ -123,7 +141,7 @@ body {
 .profile-circle {
     position: absolute;
     border-radius: 50%;
-    border: none; /* Removed gold ring */
+    border: none; 
     box-shadow: var(--shadow-heavy);
     background: var(--jbb-green);
     overflow: hidden;
