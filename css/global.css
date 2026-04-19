@@ -9,7 +9,7 @@
     --jbb-blue: #262262;
     --jbb-gold: #d4af37;
     
-    /* NEW: Color variables updated for the framing effect */
+    /* Color variables updated for the framing effect */
     --jbb-bg: #F4F1EA; 
     --jbb-bg-outer: #DDD9D0; 
     
@@ -31,7 +31,7 @@ body {
     overflow-x: hidden;
 }
 
-/* NEW: The wrapper class to hold the center content */
+/* The wrapper class to hold the center content */
 .page-wrapper {
     background-color: var(--jbb-bg);
     max-width: 1200px;
@@ -120,15 +120,16 @@ body {
 .profile-overlap-section {
     position: relative;
     width: 100%;
-    height: 250px;
+    height: 300px; /* Increased slightly so your graphic has room to breathe */
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 2rem;
     
-    /* NEW: Inserts the custom SVG graphic perfectly behind the circles */
-    background-image: url('../assets/tools/images/homepage_strip.svg'); 
+    /* CORRECTED PATH: Inserts the custom SVG graphic perfectly behind the circles */
+    background-image: url('../assets/images/homepage_strip.svg'); 
     background-size: 100% auto;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
 }
 
