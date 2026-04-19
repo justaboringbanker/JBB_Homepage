@@ -115,26 +115,28 @@ body {
 }
 
 /* =========================================
-   Overlapping Profiles Layout (UPDATED SIZE)
+   Overlapping Profiles Layout
    ========================================= */
 .profile-overlap-section {
     position: relative;
     width: 100%;
-    height: 380px; /* Increased from 300px to give it more vertical presence */
+    height: 300px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3rem; /* Pushes the 'Just a Boring Banker' text down slightly */
+    
+    /* Removed the bottom margin to pull the text up */
+    margin-bottom: 0; 
     
     background-image: url('../assets/images/homepage_strip.svg'); 
-    background-size: 115% auto; /* Blows the background graphic up by 15% */
+    background-size: 100% auto;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .profile-container {
     position: relative;
-    width: 650px; /* Widened slightly to accommodate the bigger circles */
+    width: 600px;
     height: 100%;
 }
 
@@ -151,18 +153,18 @@ body {
 }
 
 .photo-circle {
-    width: 225px; /* Scaled up 25% */
-    height: 225px;
-    top: 75px; /* Nudged to keep it vertically centered */
-    left: 5%;
+    width: 180px;
+    height: 180px;
+    top: 50px; 
+    left: 10%;
     z-index: 1;
 }
 
 .avatar-circle {
-    width: 300px; /* Scaled up 25% */
-    height: 300px;
-    top: 40px; /* Nudged to keep it vertically centered */
-    right: 5%;
+    width: 240px;
+    height: 240px;
+    top: 20px; 
+    right: 10%;
     z-index: 2;
     background: radial-gradient(circle, var(--jbb-green-light) 0%, var(--jbb-green-dark) 100%);
 }
@@ -189,7 +191,9 @@ body {
     gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    
+    /* Removed top padding to suck the text up tighter */
+    padding: 0 2rem 2rem 2rem; 
 }
 
 .main-heading {
